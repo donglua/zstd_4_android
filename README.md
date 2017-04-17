@@ -13,6 +13,6 @@ LOCAL_MODULE := dgc_zstd.
 
 ## introduction 
 
-My Android project is based on luben's zstd-jni project, which git repo located at https://github.com/luben/zstd-jni. The java source files .c and .h files all come from zstd-jni project without any change. I've tried to use the zstd-1.1.4 jar lib  which you can find in maven_central with gradle import into my android project, but I found it not suitable for andorid project, your will catch some crash exception when use, so I create this android project and rebuild zstd native shared library for andorid use. If you want to zstd in your andorid project, maybe this can give your some help. Thanks for @luben's help when I use zstd. 
+My Android project is based on luben's zstd-jni project, which git repo located at https://github.com/luben/zstd-jni. The java source files .c and .h files all come from zstd-jni project without any change but Native.java, in Native.java I change the way to load .so library. I've tried to use the zstd-1.1.4 jar lib  which you can find in maven_central with gradle import into my android project, but I found it not suitable for andorid project, your will catch some crash exception when use, so I create this android project and rebuild zstd native shared library for andorid use. If you want to zstd in your andorid project, maybe this can give your some help. Thanks for @luben's help when I use zstd. 
 
 
