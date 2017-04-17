@@ -1,0 +1,102 @@
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+jni_directbuffercompress_zstd.c:48:26: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    jclass clazz = (*env)->GetObjectClass(env, obj);
+                   ~~~~~~^~
+                         .
+jni_directbuffercompress_zstd.c:48:48: error: too many arguments to function call, expected single argument 'obj', have 2 arguments
+    jclass clazz = (*env)->GetObjectClass(env, obj);
+                   ~~~~~~~~~~~~~~~~~~~~~~      ^~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:876:5: note: 'GetObjectClass' declared here
+    jclass GetObjectClass(jobject obj) {
+    ^
+jni_directbuffercompress_zstd.c:49:25: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    consumed_id = (*env)->GetFieldID(env, clazz, "consumed", "I");
+                  ~~~~~~^~
+                        .
+jni_directbuffercompress_zstd.c:49:62: error: too many arguments to function call, expected 3, have 4
+    consumed_id = (*env)->GetFieldID(env, clazz, "consumed", "I");
+                  ~~~~~~~~~~~~~~~~~~                         ^~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1268:5: note: 'GetFieldID' declared here
+    jfieldID GetFieldID(jclass clazz, const char *name,
+    ^
+jni_directbuffercompress_zstd.c:50:25: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    produced_id = (*env)->GetFieldID(env, clazz, "produced", "I");
+                  ~~~~~~^~
+                        .
+jni_directbuffercompress_zstd.c:50:62: error: too many arguments to function call, expected 3, have 4
+    produced_id = (*env)->GetFieldID(env, clazz, "produced", "I");
+                  ~~~~~~~~~~~~~~~~~~                         ^~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1268:5: note: 'GetFieldID' declared here
+    jfieldID GetFieldID(jclass clazz, const char *name,
+    ^
+jni_directbuffercompress_zstd.c:63:27: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    jsize dst_cap = (*env)->GetDirectBufferCapacity(env, dst_buf);
+                    ~~~~~~^~
+                          .
+jni_directbuffercompress_zstd.c:63:58: error: too many arguments to function call, expected single argument 'buf', have 2 arguments
+    jsize dst_cap = (*env)->GetDirectBufferCapacity(env, dst_buf);
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ^~~~~~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1844:5: note: 'GetDirectBufferCapacity' declared here
+    jlong GetDirectBufferCapacity(jobject buf) {
+    ^
+jni_directbuffercompress_zstd.c:65:27: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    jsize src_cap = (*env)->GetDirectBufferCapacity(env, src_buf);
+                    ~~~~~~^~
+                          .
+jni_directbuffercompress_zstd.c:65:58: error: too many arguments to function call, expected single argument 'buf', have 2 arguments
+    jsize src_cap = (*env)->GetDirectBufferCapacity(env, src_buf);
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ^~~~~~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1844:5: note: 'GetDirectBufferCapacity' declared here
+    jlong GetDirectBufferCapacity(jobject buf) {
+    ^
+jni_directbuffercompress_zstd.c:67:38: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    char *dst_buf_ptr = (char*)(*env)->GetDirectBufferAddress(env, dst_buf);
+                               ~~~~~~^~
+                                     .
+jni_directbuffercompress_zstd.c:67:68: error: too many arguments to function call, expected single argument 'buf', have 2 arguments
+    char *dst_buf_ptr = (char*)(*env)->GetDirectBufferAddress(env, dst_buf);
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ^~~~~~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1841:5: note: 'GetDirectBufferAddress' declared here
+    void* GetDirectBufferAddress(jobject buf) {
+    ^
+jni_directbuffercompress_zstd.c:69:38: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    char *src_buf_ptr = (char*)(*env)->GetDirectBufferAddress(env, src_buf);
+                               ~~~~~~^~
+                                     .
+jni_directbuffercompress_zstd.c:69:68: error: too many arguments to function call, expected single argument 'buf', have 2 arguments
+    char *src_buf_ptr = (char*)(*env)->GetDirectBufferAddress(env, src_buf);
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ^~~~~~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1841:5: note: 'GetDirectBufferAddress' declared here
+    void* GetDirectBufferAddress(jobject buf) {
+    ^
+jni_directbuffercompress_zstd.c:77:11: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    (*env)->SetIntField(env, obj, consumed_id, input.pos);
+    ~~~~~~^~
+          .
+jni_directbuffercompress_zstd.c:77:48: error: too many arguments to function call, expected 3, have 4
+    (*env)->SetIntField(env, obj, consumed_id, input.pos);
+    ~~~~~~~~~~~~~~~~~~~                        ^~~~~~~~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1320:5: note: 'SetIntField' declared here
+    void SetIntField(jobject obj, jfieldID fieldID,
+    ^
+jni_directbuffercompress_zstd.c:78:11: error: member reference type 'JNIEnv' (aka 'JNIEnv_') is not a pointer; maybe you meant to use '.'?
+    (*env)->SetIntField(env, obj, produced_id, output.pos);
+    ~~~~~~^~
+          .
+jni_directbuffercompress_zstd.c:78:48: error: too many arguments to function call, expected 3, have 4
+    (*env)->SetIntField(env, obj, produced_id, output.pos);
+    ~~~~~~~~~~~~~~~~~~~                        ^~~~~~~~~~
+/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers/jni.h:1320:5: note: 'SetIntField' declared here
+    void SetIntField(jobject obj, jfieldID fieldID,
+    ^
+jni_directbuffercompress_zstd.c:70:30: error: cannot jump from this goto statement to its label
+    if (src_buf_ptr == NULL) goto E1;
+                             ^
+jni_directbuffercompress_zstd.c:73:19: note: jump bypasses variable initialization
+    ZSTD_inBuffer input = { src_buf_ptr + src_offset, src_size, 0 };
+                  ^
+jni_directbuffercompress_zstd.c:72:20: note: jump bypasses variable initialization
+    ZSTD_outBuffer output = { dst_buf_ptr + dst_offset, dst_size, 0 };
+                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
