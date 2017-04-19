@@ -192,6 +192,8 @@ E1: return size;
  * Class:     com_github_luben_zstd_Zstd
  * Method:    decompressedDirectByteBufferSize
  * Signature: (Ljava/nio/ByteBuffer;II)J
+ *
+ * hangl_marker
  */
 JNIEXPORT jlong JNICALL Java_com_github_luben_zstd_Zstd_decompressedDirectByteBufferSize
   (JNIEnv *env, jclass obj, jobject src_buf, jint src_offset, jint src_size) {

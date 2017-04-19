@@ -400,7 +400,9 @@ unsigned long long ZSTD_findDecompressedSize(const void* src, size_t srcSize)
               note : 0 can mean any of the following :
                    - decompressed size is not present within frame header
                    - frame header unknown / not supported
-                   - frame header not complete (`srcSize` too small) */
+                   - frame header not complete (`srcSize` too small)
+                   hangl_marker
+                   */
 unsigned long long ZSTD_getDecompressedSize(const void* src, size_t srcSize)
 {
     unsigned long long const ret = ZSTD_getFrameContentSize(src, srcSize);
