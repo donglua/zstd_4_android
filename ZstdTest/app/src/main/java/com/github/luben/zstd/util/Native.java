@@ -1,7 +1,5 @@
 package com.github.luben.zstd.util;
 
-import android.util.Log;
-
 public enum Native {
     ;
 
@@ -34,7 +32,7 @@ public enum Native {
 
     private static String resourceName() {
         String resName = "/" + osName() + "/" + osArch() + "/" + libname + "." + libExtension();
-        Log.d("hangl_debug", "native lib res name will be " + resName);
+        //Log.d("hangl_debug", "native lib res name will be " + resName);
         return resName;
     }
 

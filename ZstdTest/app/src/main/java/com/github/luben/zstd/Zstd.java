@@ -11,6 +11,25 @@ public class Zstd {
     static {
         Native.load();
     }
+
+
+    /**
+     * fuck this
+     *
+     * */
+    /**
+    JNIEXPORT jlong JNICALL Java_com_github_luben_zstd_Zstd_decompressedSize
+            (JNIEnv *env, jclass obj, jbyteArray src) {
+        size_t size = (size_t)(0-ZSTD_error_memory_allocation);
+        jsize src_size = (*env)->GetArrayLength(env, src);
+        void *src_buff = (*env)->GetPrimitiveArrayCritical(env, src, NULL);
+        if (src_buff == NULL) goto E1;
+        size = ZSTD_getDecompressedSize(src_buff, (size_t) src_size);
+        (*env)->ReleasePrimitiveArrayCritical(env, src, src_buff, 0);
+        E1: return size;
+    }
+    **/
+
     /**
      * Compresses buffer 'src' into buffer 'dst'.
      *
@@ -226,6 +245,19 @@ public class Zstd {
      *         0 if the original size is now known
      */
     public static native long decompressedSize(byte[] src);
+
+
+    /**
+     * Return the original size of a compressed buffer (if known)
+     *
+     * @param src the compressed buffer
+     * @return the number of bytes of the original buffer
+     *         0 if the original size is now known
+     *
+     *         add by hangl
+     *         decompressedSize() always return ZERO!!! fuck it
+     */
+    public static native long findDecompressedSize(byte[] src);
 
     /**
      * Return the original size of a compressed buffer (if known)
