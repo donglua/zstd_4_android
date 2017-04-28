@@ -276,11 +276,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 is = getAssets().open("2.dict");
                 byte[] dictBytes = readBytes3(is);
                 String dict = new String(dictBytes);
-                Log.d(tag, "dictBytes length = "+dictBytes.length+"dict content is " + dict);
+                //Log.d(tag, "dictBytes length = "+dictBytes.length+"dict content is " + dict);
+                Log.d(tag, "dictBytes length = "+dictBytes.length);
                 String md5 = MD5(dict);
                 Log.d(tag, "dict md5 == " + md5);
 
-                byte[] dictCompressedData = Zstd.compress(srcBytes, new ZstdDictCompress(dictBytes, 1));
+                byte[] dictCompressedData = Zstd.compress(srcBytes, new ZstdDictCompress(dictBytes, 9));
                 Log.d(tag, "compress string with dict return == " + new String(dictCompressedData));
 
                 int originalSize = (int) Zstd.decompressedSize(dictCompressedData);
@@ -288,7 +289,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
                 ZstdDictDecompress dictDecompress = new ZstdDictDecompress(dictBytes);
                 byte[] json = Zstd.decompress(dictCompressedData, dictDecompress, originalSize);
-                Log.d(tag, "decompress with dict return json " + new String(json));
+                Log.d(tag, "decompress with DICT return json " + new String(json));
+
+
 
 
                 int  testSize = 128 * 1024;
