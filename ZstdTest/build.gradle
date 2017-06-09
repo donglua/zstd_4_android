@@ -2,19 +2,25 @@
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "http://jcenter.bintray.com/"}
+        maven { url "http://repo1.maven.org/maven2"}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.1'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.novoda:bintray-release:0.4.0'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "http://jcenter.bintray.com/"}
+        maven { url "http://repo1.maven.org/maven2"}
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
     }
 }
 
